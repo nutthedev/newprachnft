@@ -1,13 +1,37 @@
 import '../css/holding.css';
 
 import { CA_NFTs } from "../componants/contract";
-import { box, delay, getChainRPC, chain } from "../componants/walletconnect";
+import { box, delay, getChainRPC, chain, shortAddress } from "../componants/walletconnect";
+
+function getNftNameFromHash(hash) {
+    const percentage = (hash % 10000n) / 100n;
+
+    if (percentage < 100/7) {
+        return "Space Jamer";
+    } else if (percentage < 100/6) {
+        return "Booster Gear";
+    } else if (percentage < 100/5) {
+        return "Shock Absorber";
+    } else if (percentage < 100/4) {
+        return "Plasma Core";
+    } else if (percentage < 100/3) {
+        return "Red Order";
+    } else if (percentage < 100/2) {
+        return "Refine Gear";
+    } else if (percentage < 100/1) {
+        return "Relic รูปประแจ";
+    }
+}
 
 function renderNFTsContent(params) {
     return /*html*/`
         <div class="nftcard">
-            <span>#ID 0</span>
+            <span>#ID ${params.id}</span>
             <img src="/nft.png" class="">
+            <br>
+            <span style="text-align: start">Minter: ${shortAddress(params.minter)}</span>
+            <span style="text-align: start"># ${getNftNameFromHash(params.hash)}</span>
+            <br>
         </div>
     `;
 }
