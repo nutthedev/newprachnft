@@ -1,0 +1,116 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --color-grey: #00000008;
+  --color-black: #000;
+  --color-success: #64ff7b;
+  --color-primary: #646cff;
+  --color-hover: #4b50e6;
+  --color-dark: #213547;
+  --color-footer: #0b0a1e;
+  --color-light: #ffffff;
+  --color-danger: #cc334d;
+
+  color: var(--color-light);
+  background-color: var(--color-black);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: top;
+  min-width: 200px;
+  min-height: 100dvh;
+  max-width: 100%;
+  zoom: 90%;
+}
+
+#app {
+  flex: 1;
+  max-width: 1920px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+nav {
+  display: flex;
+  place-items: center;
+  justify-content: space-between;
+  padding: 1em;
+}
+
+nav .title {
+  display: flex;
+  place-items: center;
+}
+
+nav .title .menu {
+  margin-left: 1em;
+}
+
+nav .title .menu a {
+  font-weight: 500;
+  color: var(--color-light);
+  margin-left: 1em;
+}
+
+nav .title .menu .disabled {
+  color: var(--color-dark);
+}
+
+nav .logo {
+  width: 2em;
+  height: 2em;
+}
+
+#main-content {
+  display: flex;
+  place-items: start;
+  justify-content: center;
+  margin-bottom: 3em;
+  z-index: 1;
+}
+
+a {
+  cursor: pointer;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover { color: var(--color-dark); }
+
+hr {
+  background-color: #646cff68;
+  height: 1px;
+  border: none;
+}
+
+.content {
+  width: 100%;
+  max-width: 38em;
+  padding: 0em 0.5em;
+}
+
+.button-primary {
+  cursor: pointer;
+  color: var(--color-light);
+  background-color: var(--color-primary);
+  padding: 1em 2em;
+  border: 1px solid var(--color-primary);
+  border-radius: 0.75em;
+  margin-top: 1em;
+  transition: all 200ms ease-in;
+}
+
+.button-primary:hover {
+  background-color: var(--color-hover);
+}
